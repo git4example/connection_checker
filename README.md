@@ -52,3 +52,12 @@ Resolving deltas: 100% (1/1), done.
 ```
 
 When running inside docker, make sure you pass the env variables using the -e option.
+
+4. Docker build 
+
+```
+docker build -t connection-test .
+docker tag connection-test <ecr-repo>
+<ECR login>
+docker push <ecr-repo>
+```

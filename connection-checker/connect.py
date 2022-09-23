@@ -1,6 +1,8 @@
+from operator import truediv
 import os
 import logging
 import socket
+import time
 
 address = os.getenv("CONNECT_ADDRESS")
 port = int(os.getenv("CONNECT_PORT"))
@@ -15,16 +17,18 @@ log.setLevel(log_level)
 
 
 def main():
-    s = socket.socket()
-    try:
-        s.settimeout(timeout)
-        s.connect((address, port))
-        log.info(f'Successfully connected to {address} on port {port}')
-    except Exception as e:
-        log.error(f"Failed trying to connect to {address} on port {port}. Exception is {e}")
-    finally:
-        s.close()
-
+    i = 1
+    while i:
+        s = socket.socket()
+        try:
+            s.settimeout(timeout)
+            s.connect((address, port))
+            log.info(f'Successfully connected to {address} on port {port}')
+        except Exception as e:
+            log.error(f"Failed trying to connect to {address} on port {port}. Exception is {e}")
+        finally:
+            s.close()
+        time.sleep(1)
 
 if __name__ == '__main__':
     main()
