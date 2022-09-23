@@ -61,3 +61,17 @@ docker tag connection-test <ecr-repo>
 <ECR login>
 docker push <ecr-repo>
 ```
+
+---- 
+
+
+
+1. install the Python module using: pip install pyodbc
+2. Export the following env variables
+MSSQL_SERVER_ADDRESS
+MSSQL_SERVER_PORT
+MSSSQL_DATABASE
+MSSQL_USERNAME
+MSSQL_PASSWORD
+
+3. run the script using python3 mssql_connection_checker.py
